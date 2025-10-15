@@ -7,10 +7,10 @@
       return {
         initialize: function (api, state, initializeCallback) {
           initializeCallback();
-          window.open("twitter://messages", "_system");
+          window.open("treker_driver_lite://", "_system");
           const btn = document.getElementById("openDriver");
           btn.addEventListener("click", function () {
-            window.open("twitter://messages", "_system")
+            window.open("treker_driver_lite://", "_system")
               .catch(function (e) {
                 console.error("Cannot open link:", e);
               });
