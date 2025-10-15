@@ -3,13 +3,26 @@
 <head>
     <meta charset="utf-8"/>
     <title>Treker Driver</title>
-    <script>
-        window.onload = function() {
-          window.location.href = "treker_driver_lite://";
-        };
+    geotab.addin.driver = function () {
+      return {
+        initialize: function (api, state, initializeCallback) {
+          initializeCallback();
+    api.mobile.openLink("treker_driver_lite://");
+          const btn = document.getElementById("openDriver");
+          btn.addEventListener("click", function () {
+            api.mobile.openLink("treker_driver_lite://")
+              .catch(function (e) {
+                console.error("Cannot open link:", e);
+              });
+          });
+        },
+        focus: function () {},
+        blur: function () {}
+      };
+    };
     </script>
 </head>
 <body>
-  <button onclick="window.location.href='treker_driver_lite://'">Open Treker Driver App</button>
+<button id="openDriver">Open Driver App</button>
 </body>
 </html>
