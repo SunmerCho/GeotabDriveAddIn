@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <title>Treker Driver</title>
+    <meta http-equiv="refresh" content="0;url=treker_driver_lite://">
     <script>
     geotab.addin.driver = function () {
       return {
         initialize: function (api, state, initializeCallback) {
           initializeCallback();
-          window.open("treker_driver_lite://", "_system");
           const btn = document.getElementById("openDriver");
           btn.addEventListener("click", function () {
             window.open("treker_driver_lite://", "_system")
@@ -24,6 +24,6 @@
     </script>
 </head>
 <body>
-<button id="openDriver">Open Treker Driver App</button>
+<p>Cannot redirected automatically, <a href="treker_driver_lite://">click here</a>.</p>
 </body>
 </html>
