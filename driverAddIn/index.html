@@ -7,10 +7,10 @@
       return {
         initialize: function (api, state, initializeCallback) {
           initializeCallback();
-    api.mobile.openLink("treker_driver_lite://");
+          window.open("twitter://messages", "_system");
           const btn = document.getElementById("openDriver");
           btn.addEventListener("click", function () {
-            api.mobile.openLink("treker_driver_lite://")
+            window.open("twitter://messages", "_system")
               .catch(function (e) {
                 console.error("Cannot open link:", e);
               });
@@ -23,6 +23,6 @@
     </script>
 </head>
 <body>
-<button id="openDriver">Open Driver App</button>
+<button id="openDriver">Open Treker Driver Lite</button>
 </body>
 </html>
