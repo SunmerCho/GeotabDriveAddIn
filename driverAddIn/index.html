@@ -14,15 +14,23 @@
 
             return {
                 initialize(api, state, callback) {
-                    document.getElementById("openDriver").addEventListener("click", openDriver);
-
+                    // document.getElementById("openDriver").addEventListener("click", openDriver);
+              document.getElementById("openDriver").addEventListener("click", function () {
+                            // state.gotoPage("devices");
+                  const exist = api.mobile.exists();
+                  if(api.mobile.exists()){
+                      alert("exists");
+                  }else {
+                      alert("not exists");
+                  }
+                        });
                     callback();
                 },
 
                 focus(api, state) {
                     openDriver();
 
-                    api.mobile.navigate('dashboard');
+                    api.mobile.navigate('hos');
                 },
 
                 blur(api, state) {}
