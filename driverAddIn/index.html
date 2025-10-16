@@ -20,6 +20,7 @@
                   const exist = api.mobile.exists();
                   if(api.mobile.exists()){
                       alert("exists");
+                      state.gotoPage("hos");
                   }else {
                       alert("not exists");
                   }
@@ -28,9 +29,9 @@
                 },
 
                 focus(api, state) {
-                    openDriver();
+                    // openDriver();
 
-                    api.mobile.navigate('hos');
+                    api.mobile.navigate('main');
                 },
 
                 blur(api, state) {}
@@ -39,7 +40,6 @@
     </script>
 </head>
 <body>
-    <button id="openDriver">Open Driver v1</button>
+    <button id="openDriver">Open Driver v2</button>
 </body>
 </html>
-
