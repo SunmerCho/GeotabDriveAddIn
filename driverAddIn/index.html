@@ -15,14 +15,14 @@
             return {
                 initialize(api, state, callback) {
                     document.getElementById("openDriver").addEventListener("click", openDriver);
-    
-                    // setTimeout(openDriver, 0);
 
                     callback();
                 },
 
                 focus(api, state) {
                     openDriver();
+
+                    api.mobile.navigate('dashboard');
                 },
 
                 blur(api, state) {}
@@ -31,7 +31,7 @@
     </script>
 </head>
 <body>
-    <button id="openDriver">Open Driver</button>
+    <button id="openDriver">Open Driver v1</button>
 </body>
 </html>
 
