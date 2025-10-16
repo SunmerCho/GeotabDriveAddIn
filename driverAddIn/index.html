@@ -14,15 +14,15 @@
 
             return {
                 initialize(api, state, callback) {
-                    document.getElementById("openDriver").addEventListener("click", api.mobile.navigate());
-      
+                    document.getElementById("openDriver").addEventListener("click", api.mobile.navigate('/'));
+      /
                     callback();
                 },
 
                 focus(api, state) {
                     // openDriver();
 
-                    api.mobile.navigate('');
+                    api.mobile.exit();
                 },
 
                 blur(api, state) {}
@@ -31,6 +31,6 @@
     </script>
 </head>
 <body>
-    <button id="openDriver">Open Driver v4</button>
+    <button id="openDriver">Open Driver v5</button>
 </body>
 </html>
