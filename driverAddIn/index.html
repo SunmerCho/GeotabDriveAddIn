@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Treker Driver</title>
-  <script>
-    geotab.addin.driver = function () {
-      return {
-        initialize: function (api, state, initializeCallback) {
-          initializeCallback();
+    <title>Treker Driver</title>
+    <script>
+        geotab.addin.driver = () => {
+            const openDriver = function () {
+                try {
+                    window.open("treker_driver_lite://", "_system");
+                } catch (e) {
+                    console.error("Cannot open driver app:", e);
+                }
+            };
 
-          const openDriver = function () {
-            try {
-              window.open("treker_driver_lite://", "_system");
-            } catch (e) {
-              console.error("Cannot open link:", e);
-            }
-          };
-          setTimeout(openDriver, 0);
-          document.getElementById("openDriver").addEventListener("click", openDriver);
-        },
-        focus: function () {},
-        blur: function () {}
-      };
-    };
-  </script>
+            return {
+                initialize(api, state, callback) {
+                    document.getElementById("openDriver").addEventListener("click", openDriver);
+    
+                    // setTimeout(openDriver, 0);
+
+                    callback();
+                },
+
+                focus(api, state) {
+                    openDriver();
+                },
+
+                blur(api, state) {}
+            };
+        };
+    </script>
 </head>
 <body>
-  <button id="openDriver">Open Treker Driver App</button>
+    <button id="openDriver">Open Driver</button>
 </body>
 </html>
+
