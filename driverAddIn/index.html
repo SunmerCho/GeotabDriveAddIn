@@ -14,7 +14,7 @@
 
             return {
                 initialize(api, state, callback) {
-                    document.getElementById("openDriver").addEventListener("click", api.mobile.navigate('home'));
+                    document.getElementById("openDriver").addEventListener("click", api.mobile.navigate());
       
                     callback();
                 },
@@ -22,7 +22,7 @@
                 focus(api, state) {
                     // openDriver();
 
-                    api.mobile.navigate('dash');
+                    api.mobile.navigate('');
                 },
 
                 blur(api, state) {}
@@ -31,6 +31,6 @@
     </script>
 </head>
 <body>
-    <button id="openDriver">Open Driver v3</button>
+    <button id="openDriver">Open Driver v4</button>
 </body>
 </html>
