@@ -14,24 +14,15 @@
 
             return {
                 initialize(api, state, callback) {
-                    // document.getElementById("openDriver").addEventListener("click", openDriver);
-              document.getElementById("openDriver").addEventListener("click", function () {
-                            // state.gotoPage("devices");
-                  const exist = api.mobile.exists();
-                  if(api.mobile.exists()){
-                      alert("exists");
-                      state.gotoPage("hos");
-                  }else {
-                      alert("not exists");
-                  }
-                        });
+                    document.getElementById("openDriver").addEventListener("click", api.mobile.navigate('home'));
+      
                     callback();
                 },
 
                 focus(api, state) {
                     // openDriver();
 
-                    api.mobile.navigate('main');
+                    api.mobile.navigate('dash');
                 },
 
                 blur(api, state) {}
@@ -40,6 +31,6 @@
     </script>
 </head>
 <body>
-    <button id="openDriver">Open Driver v2</button>
+    <button id="openDriver">Open Driver v3</button>
 </body>
 </html>
